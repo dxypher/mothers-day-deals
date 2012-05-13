@@ -1,0 +1,8 @@
+<div id=show>
+<h1><%= @choice["name"] %></h1>
+<h3><%= @choice["title"].split('(').first %></h3>
+<p><%= @choice["highlight"].split('>').last.split('<').first %></p>
+<p id=image><%= image_tag @choice["image"] %></p>
+</div>
+
+

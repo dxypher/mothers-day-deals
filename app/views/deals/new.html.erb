@@ -1,0 +1,18 @@
+
+<%= form_for @location do |f| %>
+<table id=table>
+	<tr>
+		<th><%= f.label :lat %></th>
+		<td><%= f.text_field(:lat) %></td>
+	</tr>
+	<tr>
+		<th><%= f.label :lng%></th>
+		<td><%= f.text_field(:lng) %></td>
+	</tr>
+
+	<tr>
+		<td><%= f.submit %></td>
+	</tr>
+</table>
+
+<% end %>

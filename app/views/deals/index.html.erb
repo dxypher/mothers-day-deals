@@ -1,0 +1,28 @@
+<h1>Deals</h1>
+
+
+	
+<% @deals["deals"].each	do |deal| %>
+
+	
+	<% if deal["dealTypes"].blank? %>
+	
+	<% elsif @type.index(deal["dealTypes"][0]["name"]) %>
+	
+	<% @d = Choice.new( name: deal["merchant"]["name"], category: deal["dealTypes"][0]["name"], 
+					highlight: deal["highlightsHtml"], title: deal["title"], image: deal["mediumImageUrl"])%>
+	<% @d.save%>
+	<%end%>
+<%end%>
+<ol>
+<% @choices.each do |choice| %>	
+	<div id=index>				
+	<li><p><strong><a href = "http://localhost:3000/choices/<%=choice.id%>"><%=choice["name"]%></a></strong></p></li>
+	<p>Category: <%= choice["category"] %></p>
+	<p>Highlight: <%= choice["highlight"].split('>').last.split('<').first %></p>
+	<p><%= image_tag choice["image"] %></p>
+</div>
+<%end%>
+</ol>
+
+
